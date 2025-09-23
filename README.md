@@ -233,7 +233,7 @@ for i in range(10):
         break
 print(i)
 ```
-![Меню](picturies3/C3.1.png)
+![Меню](picturies3/С3.1.png)
 
 - ## Выводы
 1. Строка при выводе благодаря not внутри print() преобразует указанное True в противоположное значение False
