@@ -280,8 +280,20 @@ else:
 ### • Проверьте, начинается ли предложение с "The" и заканчивается ли на "end".
 ### Проверьте работу программы минимум на 3 предложениях, чтобы охватить проверку всех поставленных условий.
 ```python
-word = "Опапа"
-print(word*3)
+text = input()
+print("Длина текста - ", len(text))
+print("Текст в нижнем регистре - ", text.lower())
+count = 0
+for i in text:
+    if i == 'i' or i == 'o' or i == 'a' or i == 'e' or i == 'u':
+        count += 1
+print("Количество гласных - ", count)
+text.replace("ugly", "beauty")
+print("Измененный текст - ", text)
+if text[::3] == "The" and text[::-3] == "end":
+    print ('Хороший текст')
+else:
+    print('Тоже хорошй, но не такой хороший текст')
 ```
 ![Меню](С3.4.png)
 
@@ -293,8 +305,15 @@ print(word*3)
 ### Программу нужно составить из данных фрагментов кода:
 ### Строки кода можно использовать только один раз. Не обязательно использовать все строки кода.
 ```python
-from datetime import datetime;
-print("Сегодня "f"{datetime.now().day} {datetime.now().strftime('%B')} {datetime.now().year}", end ='. Всего хорошего!')
+text = 'hello world'
+count = 0
+
+for j in text:
+    count += 1
+    if count % 2 == 1:
+        print(text)
+    else:
+        print(text[:5])
 ```
 ![Меню](С3.5.png)
 
