@@ -191,14 +191,24 @@ print(my_list[::-1])
 ### [8734, 2345, 8201, 6621, 9999, 1234, 5678, 8201, 8888, 4321, 3365, 1478, 9865, 5555, 7777, 9998, 1111, 2222, 3333, 4444, 5556, 6666, 5410, 7778, 8889, 4445, 1439, 9604, 8201, 3365, 7502, 3016, 4928, 5837, 8201, 2643, 5017, 9682, 8530, 3250, 7193, 9051, 4506, 1987, 3365, 5410, 7168, 7777, 9865, 5678, 8201, 4445, 3016, 4506, 4506]
 ### Результатом выполнения задачи будет: листинг кода, и вывод в консоль, в котором будет указана вся необходимая информация.
 ```python
-Ресторан на предприятии ведет учет посещений за неделю при помощи кода работника. У них есть список со всеми посещениями за неделю. Ваша задача посчитать:
+visits = [8734, 2345, 8201, 6621, 9999, 1234, 5678, 8201, 8888, 4321, 3365,
+          1478, 9865, 5555, 7777, 9998, 1111, 2222, 3333, 4444, 5556, 6666,
+          5410, 7778, 8889, 4445, 1439, 9604, 8201, 3365, 7502, 3016, 4928,
+          5837, 8201, 2643, 5017, 9682, 8530, 3250, 7193, 9051, 4506, 1987,
+          3365, 5410, 7168, 7777, 9865, 5678, 8201, 4445, 3016, 4506, 4506]
 
-1. Сколько было выдано чеков
-2. Сколько разных людей посетило ресторан
-3. Какой работник посетил ресторан больше всех раз
-Список выданных чеков за неделю:
-[8734, 2345, 8201, 6621, 9999, 1234, 5678, 8201, 8888, 4321, 3365, 1478, 9865, 5555, 7777, 9998, 1111, 2222, 3333, 4444, 5556, 6666, 5410, 7778, 8889, 4445, 1439, 9604, 8201, 3365, 7502, 3016, 4928, 5837, 8201, 2643, 5017, 9682, 8530, 3250, 7193, 9051, 4506, 1987, 3365, 5410, 7168, 7777, 9865, 5678, 8201, 4445, 3016, 4506, 4506]
-Результатом выполнения задачи будет: листинг кода, и вывод в консоль, в котором будет указана вся необходимая информация.
+from collections import Counter
+
+unique_visitors = set(visits)
+num_unique_visitors = len(unique_visitors)
+print("Количество уникальных посетителей:", num_unique_visitors)
+
+total_checks = len(visits)
+print("Общее количество выданных чеков:", total_checks)
+
+worker_counts = Counter(visits)
+most_frequent_worker = worker_counts.most_common(1)[0][0]
+print("Работник, посетивший ресторан больше всего:", most_frequent_worker)
 ```
 ![Меню](picts/С5.1.png)
 
@@ -219,17 +229,20 @@ print(my_list[::-1])
 ### 27.8, 24.5, 16.3, 18.7, 31.9, 12.9, 37.4]
 ### Результатом выполнения задачи будет: листинг кода, и вывод в консоль, в котором будет указана вся необходимая информация.
 ```python
-import random
-
 def main():
-    value = random.randint(1, 6)
-    print(f"Выпало: {value}")
-    if value == 5 or value == 6:
-        print("Вы победили")
-    if value == 3 or value == 4:
-        main()
-    if value == 1 or value == 2:
-        print("Вы проиграли")
+    results = [10.2, 14.8, 19.3, 22.7, 12.5, 33.1, 38.9, 21.6, 26.4, 17.1, 30.2, 35.7, 16.9,
+               27.8, 24.5, 16.3, 18.7, 31.9, 12.9, 37.4]
+
+    best_results = sorted(results)[:3]
+    print("Три лучшие результата:", best_results)
+
+    worst_results = sorted(results)[::-1][:3]
+    print("Три худшие результата:", worst_results)
+
+    for result in results[9:]:
+        print(result)
+
+
 if __name__ == "__main__":
     main()
 ```
@@ -252,14 +265,29 @@ if __name__ == "__main__":
 ### two = [5,18,40,62,98]
 ### three = [2,21,37,56,84]
 ```python
-import datetime
-import time
+import math
 
-for i in range(5):
-    time1 = datetime.datetime.now()
-    time2 = time1.strftime("%H:%M:%S")
-    print(time2)
-    time.sleep(1)
+def heron_area(a, b, c):
+    s = (a + b + c) / 2
+    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+    return round(area)
+
+one = [12, 25, 3, 48, 71]
+two = [5, 18, 40, 62, 98]
+three = [2, 21, 37, 56, 84]
+
+def find_max_min(lst):
+    return max(lst), min(lst)
+
+max_one, min_one = find_max_min(one)
+max_two, min_two = find_max_min(two)
+max_three, min_three = find_max_min(three)
+
+area1 = heron_area(max_one, max_two, max_three)
+area2 = heron_area(min_one, min_two, min_three)
+
+print("Площадь первого треугольника:", area1)
+print("Площадь второго треугольника:", area2)
 ```
 ![Меню](picts/С5.3.png)
 
@@ -276,14 +304,21 @@ for i in range(5):
 ### [5, 4, 3, 3, 4, 3, 3, 5, 5, 3, 3, 3, 3, 4, 4]
 ### Результатом выполнения задачи будет: листинг кода, и вывод в консоль, в котором будут три обновленных массива.
 ```python
-def main(args):
-    total = sum(args)
-    return total / len(args)
+def fix_grades(grades):
+    grades = [grade for grade in grades if grade != 2]
+    return [4 if grade == 3 else grade for grade in grades]
 
-if __name__ == '__main__':
-    args = list(map(float, input('Введите значения: ').split()))
-    value = main(args)
-    print(f'Среднее арифметическое: {value}')
+list1 = [2, 3, 4, 5, 3, 4, 5, 2, 2, 5, 3, 4, 3, 5, 4]
+list2 = [4, 2, 3, 5, 3, 5, 4, 2, 2, 5, 4, 3, 5, 3, 4]
+list3 = [5, 4, 3, 3, 4, 3, 3, 5, 5, 3, 3, 3, 3, 4, 4]
+
+result1 = fix_grades(list1)
+result2 = fix_grades(list2)
+result3 = fix_grades(list3)
+
+print(f"После обработки списка 1: ", result1)
+print(f"После обработки списка 2: ", result2)
+print(f"После обработки списка 3: ", result3)
 ```
 ![Меню](picts/С5.4.png)
 
@@ -304,22 +339,20 @@ if __name__ == '__main__':
 ### {5,'5555', '555555', '55555', '555', '55', '5555555'}
 ### {'11', 1,3, 2, 5, 6, '222222', '222', 7, '2222', '22222', '22'}
 ```python
-import math
-
-def main(a, b, c):
-    s = (a + b + c) / 2
-    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
-    return area
-
-from Prog_Engineering import main
-
-a = float(input("Введите первую сторону треугольника: "))
-b = float(input("Введите вторую сторону треугольника: "))
-c = float(input("Введите третью сторону треугольника: "))
-
-area = main(a, b, c)
-if __name__ == '__main__':
-    print(f"Площадь треугольника равна {area}")
+def set_gen(lst):
+    index = 0
+    while index < len(lst):
+        cnt = lst.count(lst[index])
+        if cnt > 1:
+            lst[index] = str(lst[index]) * cnt
+        index += 1
+    return set(lst)
+list_1 = [1, 1, 3, 3, 1]
+list_2 = [5, 5, 5, 5, 5, 5, 5]
+list_3 = [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2]
+print(set_gen(list_1))
+print(set_gen(list_2))
+print(set_gen(list_3))
 ```
 ![Меню](picts/С5.5.png)
 
