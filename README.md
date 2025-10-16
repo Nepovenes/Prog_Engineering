@@ -58,7 +58,7 @@ def dict_maker (**kwargs):
     my_dict.update(**kwargs)
 
 dict_maker(a1 = 1, a2 = 20, a3 = 54, a4 = 13)
-dict_maker(name = 'Ксения', age = 20, weight = 60, eyes_color = 'green')
+dict_maker(name = 'Александра', age = 20, weight = 70, eyes_color = 'gray')
 pprint(my_dict)
 ```
 ![Меню](picts/Л6.2.png)
@@ -255,13 +255,6 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-Тест 1:
-![Меню](picts/С6.5.png)
-
-Тест 2:
-![Меню](picts/С6.5.png)
-
-Тест 3:
 ![Меню](picts/С6.5.png)
 
 ### Вывод: 
