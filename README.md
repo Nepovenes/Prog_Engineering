@@ -30,7 +30,7 @@ My typical day is quite busy, it begins at 6 o’clock in the morning when I wak
 
 Usually, my mom makes breakfast for all of us. My older brother is a student and he lives in a dormitory. I have breakfast with my family. My father usually walks our dog, but when I have enough time, I like walking the dog myself."
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/1.png)
+![Меню](pics/Л7.1.png)
 
 ### №2. 
 Напишите программу, которая выведет только первую строку из вашего файла, при этом используйте конструкцию open()/close().
@@ -40,7 +40,7 @@ f = open('Task', 'r')
 print(f.readline())
 f.close()
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/2.png)
+![Меню](pics/Л7.2.png)
 
 ### Вывод: 
 Этот код открывает файл Task для чтения ('r'), читает первую строку этого файла с помощью метода readline(), затем закрывает файл с помощью метода close().
@@ -53,68 +53,66 @@ f = open('Task', 'r')
 print(f.readlines())
 f.close()
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/3.png)
+![Меню](pics/Л7.3.png)
 
 ### Вывод: 
-Этот код открывает файл input.txt для чтения ('r'), читает все строки этого файла с помощью метода readline(), затем закрывает файл с помощью метода close().
+Этот код открывает файл Task для чтения ('r'), читает все строки этого файла с помощью метода readline(), затем закрывает файл с помощью метода close().
 
 ### №4. 
 Напишите программу, которая выведет все строки из вашего файла в массиве, при этом используйте конструкцию with open().
 ### Ответ: 
 ```python
-with open ('input.txt') as f:
+with open ('Task') as f:
     print(f.readlines())
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/4.png)
+![Меню](pics/Л7.4.png)
 
 ### Вывод: 
-Этот код открывает файл input.txt для чтения и затем выводит все строки этого файла. В результате выполнения этого кода будет выведен список строк, содержащихся в файле input.txt.
+Этот код открывает файл Task для чтения и затем выводит все строки этого файла. В результате выполнения этого кода будет выведен список строк, содержащихся в файле input.txt.
 
 ### №5. 
 Напишите программу, которая выведет каждую строку из вашего файла отдельно, при этом используйте конструкцию with open().
 ### Ответ: 
 ```python
-with open ('input.txt') as f:
+with open ('Task') as f:
     for line in f:
         print(line)
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/5.png)
-
+![Меню](pics/Л7.5.png)
 ### Вывод: 
-Этот код открывает файл input.txt для чтения и обрабатывает каждую строку этого файла. Для каждой строки вызывается функция print(), которая выводит эту строку на экран.
+Этот код открывает файл Task для чтения и обрабатывает каждую строку этого файла. Для каждой строки вызывается функция print(), которая выводит эту строку на экран.
 
 ### №6. 
 Напишите программу, которая будет добавлять новую строку в ваш файл, а потом выведет полученный файл в консоль. Вывод можно осуществлять любым способом. Обязательно проверьте сам файл, чтобы изменения в нем тоже отображались.
 ### Ответ: 
 ```python
-with open('input.txt', 'a+') as f:
-    f.write('\nA quote from a book')
+with open('Task', 'a+') as f:
+    f.write('\nfrom popular website')
 
-with open('input.txt', 'r') as f:
+with open('Task', 'r') as f:
     result = f.readlines()
     print(result)
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/6.1.png)
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/6.2.png)
+![Меню](pics/Л7.6.png)
 
 ### Вывод: 
-Этот код выполняет две операции с файлом input.txt. Во-первых, он открывает файл для записи, добавляет строку "\nA quote from a book" в конец файла и закрывает файл. Затем он снова открывает файл для чтения, читает все содержимое файла и выводит его на экран.
+Этот код выполняет две операции с файлом Task. Во-первых, он открывает файл для записи, добавляет строку "\nfrom popular website" в конец файла и закрывает файл. Затем он снова открывает файл для чтения, читает все содержимое файла и выводит его на экран.
 
 ### №7. 
 Напишите программу, которая перепишет всю информацию, которая была у вас в файле до этого, например, направит любые данные из произвольно вами составленного списка. Также не забудьте проверить что измененная вами информация сохранилась в файле.
 ### Ответ: 
 ```python
 lines = ['one', 'two', 'three']
-with open('input.txt', 'w') as f:
+with open('Task', 'w') as f:
     for line in lines:
         f.write('\nCycle run ' + line)
     print('Done!')
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/7.1.png)
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/7.2.png)
+![Меню](pics/Л7.7.1.png)
+![Меню](pics/Л7.7.2.png)
 
 ### Вывод: 
-Этот код записывает строки ['one', 'two', 'three'] в файл input.txt. Каждая строка предваряется текстом Cycle run, после чего следует новая строка. После завершения записи выводится сообщение Done!.
+Этот код записывает строки ['one', 'two', 'three'] в файл Task. Каждая строка предваряется текстом Cycle run, после чего следует новая строка. После завершения записи выводится сообщение Done!.
 
 ### №8. 
 Выберите любую папку на своем компьютере, имеющую вложенные директории. Выведите на печать в терминал ее содержимое, как и всех подкаталогов при помощи функции print_docs(directory).
@@ -130,9 +128,9 @@ def print_docs(directory):
     print(f'Файлы: {", ".join([file for file in catalog[2]])}')
     print('-' * 40)
 
-print_docs('C:/Users/sokol/Pictures/Животные')
+print_docs('D:/Фотки')
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/8.png)
+![Меню](pics/Л7.8.png)
 
 ### Вывод: 
 Функция print_docs принимает путь к директории и использует метод os.walk, чтобы получить информацию обо всех файлах и поддиректориях в данной директории. Она печатает название папки, список директорий внутри нее и список файлов. В конце выводится горизонтальная линия для визуального разделения информации.
@@ -166,9 +164,9 @@ def longestwords(file):
             return sought_words
 
 
-print(longestwords('input.txt'))
+print(longestwords('Task'))
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/9.png)
+![Меню](pics/Л7.9.png)
 
 ### Вывод: 
 Функция longestwords принимает файл в качестве аргумента и возвращает самое длинное слово в этом файле. Она открывает файл, читает его содержимое, разбивает строку на слова и определяет максимальную длину слова. Затем она проходит по всем словам и выбирает те, которые имеют такую же длину, как и самое длинное слово. Если таких слов несколько, функция возвращает их все через пробел.
@@ -194,9 +192,7 @@ with open('rows_300.csv', 'w', encoding='utf-8', newline='') as f:
 
 time.sleep(0.01)
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/10.1.png)
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/10.2.png)
-#### Файл «rows_300.csv» также есть в папке "коды"
+![Меню](pics/Л7.10.png)
 
 ### Вывод: 
 Этот код Python создает файл rows_300.csv с 300 строками данных, каждая из которых содержит номер строки, секунды и микросекунды текущего времени. Используются модули csv, datetime и time. Сначала создается объект CSV-писателя для записи данных в файл. Затем выполняется цикл, который записывает данные для каждой строки, включая текущие значения секунд и микросекунд. После завершения цикла происходит пауза в 0.01 секунды перед завершением программы.
@@ -229,10 +225,9 @@ def number_of_words(file):
     word_with_maximus = max(word_count, key=word_count.get)
     maximus = max(word_count.values())
     print(f'Cамое часто повторяющееся слово в тексте: {word_with_maximus}\nОно повторяется: {maximus} раз')
-number_of_words('text.txt')
+number_of_words('Task')
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s1.1.png)
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s1.2.png)
+![Меню](pics/С7.1.png)
 
 ### Вывод: 
 Функция number_of_words принимает файл file в качестве аргумента и выполняет следующие шаги:
@@ -268,8 +263,7 @@ while True:
     else:
         print("Неверный ввод. Попробуйте снова.")
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s2.1.png)
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s2.2.png)
+![Меню](pics/С7.2.png)
 
 ### Вывод: 
 Этот код на Python позволяет пользователю добавлять и просматривать записи о расходах. Функция add_expense принимает назначение расходов и сумму через стандартный ввод и записывает их в файл s2.txt. Функция show_expenses считывает содержимое этого файла и выводит его на экран. Основной цикл предоставляет выбор между действиями 'добавить' и 'показать'.
@@ -298,10 +292,9 @@ def text_statistics(filename):
     print(f"{letters_count} letters")
     print(f"{words_count} words")
     print(f"{lines_count} lines")
-text_statistics('s3.txt')
+text_statistics('Task')
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s3.1.png)
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s3.2.png)
+![Меню](pics/С7.3.png)
 
 ### Вывод: 
 Функция text_statistics принимает на вход имя файла и возвращает количество букв, слов и строк в этом файле. Она использует метод file.read() для чтения содержимого файла, а затем применяет несколько операций для подсчета соответствующих значений. После этого результаты выводятся на экран.
@@ -323,16 +316,16 @@ def censor_text(input_text, banned_words):
     for word in banned_words:
         input_text = re.sub(word, '*' * len(word), input_text, flags=re.IGNORECASE)
     return input_text
-with open('input.txt', 'r', encoding='utf-8') as file:
+with open('Task', 'r', encoding='utf-8') as file:
     banned_words = file.read().strip().split()
 sentence = input("Введите предложение для проверки: ")
 censored_sentence = censor_text(sentence, banned_words)
 print('Обработанное предложение', censored_sentence)
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s4.png)
+![Меню](pics/С7.4.png)
 
 ### Вывод: 
-Функция censor_text принимает два аргумента: строку input_text и список запрещенных слов banned_words. Она использует регулярное выражение для поиска каждого слова из списка banned_words в строке input_text, заменяет каждое найденное слово символами '*' в количестве, равном длине этого слова, и возвращает измененную строку. Входная строка читается из файла input.txt, который содержит список запрещенных слов. Затем пользователь вводит предложение, которое обрабатывается функцией censor_text, и результат отображается на экране.
+Функция censor_text принимает два аргумента: строку Task и список запрещенных слов banned_words. Она использует регулярное выражение для поиска каждого слова из списка banned_words в строке input_text, заменяет каждое найденное слово символами '*' в количестве, равном длине этого слова, и возвращает измененную строку. Входная строка читается из файла input.txt, который содержит список запрещенных слов. Затем пользователь вводит предложение, которое обрабатывается функцией censor_text, и результат отображается на экране.
 
 ### №5. 
 Самостоятельно придумайте и решите задачу, которая будет взаимодействовать с текстовым файлом.
@@ -340,7 +333,7 @@ print('Обработанное предложение', censored_sentence)
 
 ### Ответ: 
 ```python
-with open('s5.txt', 'r') as file:
+with open('Task', 'r') as file:
     lines = file.readlines()
 
 content = ' '.join(lines)
@@ -352,11 +345,10 @@ last_word = words[-1]
 print(first_word)
 print(last_word)
 ```
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s5.1.png)
-![Меню](https://github.com/KseniaSokolenko/PI/blob/theme_7/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8/s5.2.png)
+![Меню](pics/С7.5.png)
 
 ### Вывод: 
-Код открывает файл s5.txt для чтения, читает все строки и сохраняет их в список lines. Затем он объединяет все строки в одну строку, используя пробелы между ними, и сохраняет результат в переменную content. Далее он разбивает эту строку на отдельные слова и сохраняет их в список words. После этого код получает первое слово списка words и последнее слово, затем выводит их на экран.
+Код открывает файл Task для чтения, читает все строки и сохраняет их в список lines. Затем он объединяет все строки в одну строку, используя пробелы между ними, и сохраняет результат в переменную content. Далее он разбивает эту строку на отдельные слова и сохраняет их в список words. После этого код получает первое слово списка words и последнее слово, затем выводит их на экран.
 
 ## Общий вывод по теме: 
 
