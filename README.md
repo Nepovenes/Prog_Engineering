@@ -215,16 +215,6 @@ person.place()
 
 ### №3. 
 Самостоятельно реализуйте наследование, продолжая работать с ранее созданным классом. Оно должно отличаться, от того, что указано в теоретическом материале (методичке) и лабораторных заданиях. Результатом выполнения задания будет листинг кода и получившийся вывод консоли.
-- Текст в файле:
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-- Ожидаемый результат:
-Input file contains:
-108 letters
-20 words
-4 lines
 ### Ответ: 
 ```python
 class Human:
